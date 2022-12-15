@@ -220,17 +220,22 @@ solar_df.hist(column = 'total_panel_area', color = 'orange', bins = 50)
 ```
 
 
+    ---------------------------------------------------------------------------
 
+    NameError                                 Traceback (most recent call last)
 
-    array([[<AxesSubplot:title={'center':'total_panel_area'}>]], dtype=object)
-
-
-
-
-    
-![png](solar_adoption_analysis_files/solar_adoption_analysis_3_1.png)
+    Input In [1], in <cell line: 2>()
+          1 #create a histogram of the column total_panel_area
+    ----> 2 solar_df.hist(column = 'total_panel_area', color = 'orange', bins = 50)
     
 
+    NameError: name 'solar_df' is not defined
+
+
+
+```python
+!
+```
 
 
 ```python
@@ -240,19 +245,6 @@ solar_df[solar_df['total_panel_area'] < p90].hist(column = 'total_panel_area', c
 ```
 
 
-
-
-    array([[<AxesSubplot:title={'center':'total_panel_area'}>]], dtype=object)
-
-
-
-
-    
-![png](solar_adoption_analysis_files/solar_adoption_analysis_4_1.png)
-    
-
-
-
 ```python
 #create a histogram of the total_panel_area that is greater than the 10th percentile and less than the 90th percentile
 p10 = solar_df['total_panel_area'].quantile(q = 0.1)
@@ -260,20 +252,4 @@ solar_df[((solar_df['total_panel_area'] < p90) & (solar_df['total_panel_area'] >
                                                                                               color = 'orange', bins = 50)
 ```
 
-
-
-
-    array([[<AxesSubplot:title={'center':'total_panel_area'}>]], dtype=object)
-
-
-
-
-    
-![png](solar_adoption_analysis_files/solar_adoption_analysis_5_1.png)
-    
-
-
-
-```python
-
-```
+![Image 3](https://github.com/akl21/solar_uptake_analysis/blob/main/solar_adoption_analysis_5_1.png)
